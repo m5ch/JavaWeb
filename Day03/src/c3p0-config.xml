@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="no" ?>
+
+<!--
+<!DOCTYPE c3p0-config [
+   <!ENTITY extra SYSTEM "https://www.mchange.com/projects/c3p0/extra.xml">
+]>
+-->
+
+<c3p0-config>
+  <default-config>
+
+    <!-- 连接参数     -->
+    <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/javadb</property>
+    <property name="user">root</property>
+    <property name="password">123456</property>
+    <!-- 连接池参数 -->
+    <!-- 超时时间 -->
+     <property name="checkoutTimeout">30000</property>
+    <!-- 初始化连接数量 -->
+     <property name="initialPoolSize">5</property>
+    <!-- 最大连接数量 -->
+     <property name="maxPoolSize">10</property>
+
+    <!-- <property name="automaticTestTable">con_test</property> -->
+    <!-- <property name="idleConnectionTestPeriod">30</property> -->
+    <!-- 超时时间 -->
+    <!-- <property name="checkoutTimeout">30000</property> -->
+    <!-- 初始化连接数量 -->
+    <!-- <property name="initialPoolSize">10</property> -->
+    <!-- <property name="maxIdleTime">30</property> -->
+    <!-- <property name="maxIdleTimeExcessConnections">10</property> -->
+    <!-- <property name="maxConnectionAge">60</property> -->
+    <!-- <property name="propertyCycle">1</property> -->
+    <!-- 最大连接数量 -->
+    <!-- <property name="maxPoolSize">25</property> -->
+    <!-- <property name="minPoolSize">5</property> -->
+    <!-- <property name="maxStatements">0</property> -->
+    <!-- <property name="maxStatementsPerConnection">5</property> -->
+    <!-- <property name="maxAdministrativeTaskTime">4</property> -->
+    <!-- <property name="connectionCustomizerClassName">com.mchange.v2.c3p0.test.TestConnectionCustomizer</property> -->
+    <!-- <property name="unreturnedConnectionTimeout">15</property> -->
+    <!-- <property name="debugUnreturnedConnectionStackTraces">true</property> -->
+
+    <!-- <property name="dataSourceName">poop</property> -->
+
+    <!-- <property name="driverClass">org.postgresql.Driver</property> -->
+    <!-- <property name="jdbcUrl">jdbc:postgresql://localhost/c3p0-test</property> -->
+
+
+    <extensions>
+      <!-- <property name="myXmlKey">myXmlVal</property> -->
+      <!-- <property name="myKey">myOverriddenVal</property> -->
+    </extensions>
+
+
+    <user-overrides user="swaldman">
+      <!--
+      <property name="unreturnedConnectionTimeout">5</property>
+      <property name="debugUnreturnedConnectionStackTraces">true</property>
+      -->
+      <!-- <property name="preferredTestQuery">select poop from doop</property> --><!-- intentionally broken -->
+    </user-overrides>
+
+ <!--   &extra; -->
+
+  </default-config>
+
+
+<!--
+  <named-config name="dumbTestConfig">
+    <property name="maxStatements">200</property>
+    <property name="jdbcUrl">jdbc:test</property>
+    <property name="dataSourceName">scoop</property>
+    <user-overrides user="poop">
+      <property name="maxStatements">300</property>
+    </user-overrides>
+   </named-config>
+-->
+
+</c3p0-config>
