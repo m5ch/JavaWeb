@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function对象</title>
+    <script>
+        /*
+          Function 函数对象
+            1。 创建
+               1. const 方法名 = new Function(形式参数列表, 方法体); //不推荐
+               2. function 方法名(形式参数列表){
+                    方法体
+               }
+               3. var 方法名 = function(形式参数列表){
+                    方法体
+               }
+            2. 方法
+            3. 属性
+                1. length:形参的个数
+            4. 特点
+                1. 方法定义时，形参的类型不用写,返回值类型也不写
+                2. 方法是一个对象，如果定义名称形同的方法，会覆盖
+                3. 方法的调用只与方法的名称有关，和参数列表无关
+                4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
+            5. 调用：方法名称(实际参数列表);
+
+         */
+
+
+        function fun(a, b){
+            alert(a + b);
+        }
+
+        fun(500 , 20)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

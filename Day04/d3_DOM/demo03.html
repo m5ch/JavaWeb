@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+    <script>
+      /*
+        *Element :元素对象
+          1. 获取/创建:通过document来获取和创建
+          2．方法∶
+             1. removeAttribute() :删除属性
+             2. setAttribute():设置属性
+
+       */
+    </script>
+</head>
+<body>
+    <a>点我</a>
+    <input type="button" value="设置" id="set">
+    <input type="button" id="remove" value="取消">
+
+</body>
+
+<script>
+  //设置属性
+  const set = document.getElementById("set");
+  set.onclick = function (){
+    const ele = document.getElementsByTagName("a")[0];
+    ele.setAttribute("href","https://www.baidu.com");
+  }
+
+  //移除属性
+  const remove = document.getElementById("remove");
+  remove.onclick = function (){
+    const ele = document.getElementsByTagName("a")[0] ;
+    ele.removeAttribute("href");
+  }
+</script>
+</html>

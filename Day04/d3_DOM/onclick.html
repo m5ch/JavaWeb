@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开关</title>
+
+</head>
+<body>
+  <img id="img1" src="懂吗.png" >
+</body>
+
+<script>
+  const image = document.getElementById("img1");
+  let flag = true;
+  function fun(){
+      if (flag){
+        image.src = "懂吗.png";
+        flag = false;
+      }
+      else{
+        image.src = "懂.png";
+        flag = true;
+      }
+
+  }
+
+  image.onclick = fun;
+  // while(1){
+  //   image.onclick = fun;
+  // }
+
+
+
+</script>
+</html>

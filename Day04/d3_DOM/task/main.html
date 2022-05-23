@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+    <style>
+        .add{
+            margin: 100px auto;
+            text-align: center;
+
+        }
+        caption{
+            margin-bottom: 50px;
+        }
+        table{
+            width: 600px;
+            text-align: center;
+            border: 1px solid;
+            margin: 100px auto;
+        }
+        td,th{
+            text-align: center;
+            border: 1px solid;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+      <div class="add">
+        <input id="id" type="text" placeholder="编号">
+        <input id="name" type="text" placeholder="姓名">
+        <input id="sex" type="text" placeholder="性别">
+        <input id="btn" type="button" value="添加">
+      </div>
+      <table id="table">
+        <caption>信息采集表</caption>
+        <tr>
+          <th>编号</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>操作</th>
+        </tr>
+      </table>
+    </div>
+</body>
+
+<script>
+    //添加
+    let add_btn = document.getElementById("btn");
+    const table = document.getElementById("table")
+    add_btn.onclick = function (){
+        //获取内容
+            const id = document.getElementById("id").value;
+            const name = document.getElementById("name").value;
+            const sex = document.getElementById("sex").value;
+
+            table.innerHTML += "<tr>" +
+                                    "<td>"+id+"</td>" +
+                                    "<td>"+name+"</td>" +
+                                    "<td>"+sex+"</td>" +
+                                    "<td><a href='javascript:void(0);' onclick='delTr(this);'>删除</a></td>"
+                                "</tr>"
+    }
+    // let add_btn = document.getElementById("btn");
+    // const table = document.getElementById("table")
+    // add_btn.onclick = function (){
+    //     //获取内容
+    //     const id = document.getElementById("id").value;
+    //     const name = document.getElementById("name").value;
+    //     const sex = document.getElementById("sex").value;
+    //     //创建 td
+    //     const td_id = document.createElement("td");
+    //     const text_id = document.createTextNode(id);
+    //     td_id.appendChild(text_id);
+    //
+    //     const td_name = document.createElement("td");
+    //     const text_name = document.createTextNode(name);
+    //     td_name.appendChild(text_name);
+    //
+    //     const td_sex = document.createElement("td");
+    //     const text_sex = document.createTextNode(sex);
+    //     td_sex.appendChild(text_sex);
+    //
+    //     const td_a = document.createElement("td");
+    //     const ele_a = document.createElement("a");
+    //     ele_a.setAttribute("href","javascript:void(0);")
+    //     ele_a.setAttribute("onclick","delTr(this);");
+    //     const text_a = document.createTextNode("删除");
+    //     ele_a.appendChild(text_a);
+    //     td_a.appendChild(ele_a);
+    //
+    //
+    //     //创建 tr
+    //     const new_tr = document.createElement("tr");
+    //     new_tr.appendChild(td_id);
+    //     new_tr.appendChild(td_name);
+    //     new_tr.appendChild(td_sex);
+    //     new_tr.appendChild(td_a);
+    //
+    //     table.appendChild(new_tr);
+    //
+    // }
+
+
+    //删除
+    function delTr(obj){
+        const table = obj.parentNode.parentNode.parentNode;
+        const tr = obj.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+</script>
+</html>

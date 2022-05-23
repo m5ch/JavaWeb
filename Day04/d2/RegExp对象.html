@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp对象</title>
+
+  <script>
+
+    /*
+      1. 创建：
+        1. var reg = new REgExp("正则表达式")
+        2. var reg = /正则表达式/
+      2. 方法：
+        test():验证指定的字符串是否符合正则定义的规范
+     */
+
+    const reg1 = new RegExp("\\w{2,18}");
+    const reg2 = /\w{2,19}/;
+
+    const str = "qwertyuiop";
+    const flag1 = reg1.test(str);
+    const flag2 = reg2.test(str);
+    alert(flag1)
+    alert(flag2)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

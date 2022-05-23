@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node对象</title>
+    <script>
+      /*
+        Node :节点对象，其他5个的父对象
+          1. 特点:所有dom对象都可以被认为是一个节点
+          2. 方法
+            CRUD dom树︰
+              1. appendChild()∶向节点的子节点列表的结尾添加新的子节点。
+              2. removeChild():删除(并返回）当前节点的指定子节点。
+              3. replaceChild():用新节点替换一个子节点。
+          3. 属性:
+                parentNode:返回节点的父节点
+
+       */
+    </script>
+  <style>
+    body{
+      text-align: center;
+      margin: 200px auto;
+    }
+    #div1{
+      border: 1px solid red;
+      width: 200px;
+      height: 200px;
+      margin: 200px auto;
+    }
+    #div2{
+      border: 1px solid lightblue;
+      width: 100px;
+      height: 100px;
+    }
+    #div3{
+      border: 1px solid chocolate;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="div1">
+      <div id="div2">div2</div>
+      div1
+    </div>
+    <a href="javascript:void(0)" id="del">删除子节点</a>
+    <a href="javascript:void(0)" id="add">增加子节点</a>
+<!--    <input type="button" id="del" value="点我删除">-->
+<!--    <input type="button" id="add" value="点我增加">-->
+</body>
+
+<script>
+  let div1 = document.getElementById("div1");
+
+  const ele_a = document.getElementById("del");
+  ele_a.onclick = function (){
+    let div2 = document.getElementById("div2");
+    div1.removeChild(div2);
+  }
+    const ele_in = document.getElementById("add");
+  ele_in.onclick = function (){
+    let div3 = document.createElement("div");
+    div3.setAttribute("id","div3")
+    div1.appendChild(div3)
+  }
+
+</script>
+</html>

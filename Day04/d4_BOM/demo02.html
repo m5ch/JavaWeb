@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+    <script>
+        //reload():重载
+    </script>
+</head>
+<body>
+    <input type="button" value="点我刷新" id="btn">
+    <input type="button" value="点我移动" id="btn02">
+</body>
+<script>
+    const Btn = document.getElementById("btn")
+    Btn.onclick = function (){
+      location.reload();
+    }
+
+    const Btn02 = document.getElementById("btn02")
+    Btn02.onclick = function (){
+        location.href = "https://www.baidu.com";
+    }
+</script>
+</html>

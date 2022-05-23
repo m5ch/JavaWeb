@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制样式</title>
+    <script>
+      /*
+        控制元素样式
+          1．使用元素的style属性来设置
+              如:
+              //修改样式方式1
+              div1.style.border = "1px solid red" ;div1.style.width = "200px";
+              l/font-size--> fontsize
+              div1.style.fontsize = "2opx";
+          2．提前定义好类选择器的样式，通过元素的className属性来设置其class属性值。
+       */
+    </script>
+    <style>
+      .d1{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+      }
+      .d2{
+        width: 200px;
+        height: 200px;
+        border: 1px solid lightblue;
+      }
+    </style>
+</head>
+<body>
+    <div class="d1">div1</div>
+    <div class="d2">div2</div>
+</body>
+
+<script>
+    const d1 = document.getElementsByClassName("d1")[0];
+    const d2 = document.getElementsByClassName("d2")[0];
+
+    d1.onclick = function (){
+        d1.className = "d2";
+    }
+    d2.onclick = function (){
+        d2.className = "d1";
+    }
+</script>
+
+</html>
